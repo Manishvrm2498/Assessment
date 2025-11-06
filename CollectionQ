@@ -1,0 +1,748 @@
+/*
+import java.util.*;
+
+ARRAYLIST QUESTIONS --
+1.Create ArrayList<String>, add 5 cities, print
+
+
+import java.util.ArrayList;
+
+public class CollectionFQ {
+    public static void main(String[] args){
+        ArrayList<String> cities = new ArrayList<>();
+
+        cities.add("Mumbai");
+        cities.add("Chennai");
+        cities.add("Bengaluru");
+        cities.add("Kolkata");
+        cities.add("New Delhi");
+
+        System.out.println("Cities : " + cities);
+    }
+}
+
+
+
+
+
+2.Replace 2nd element, remove 4th, print list
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        ArrayList<String> cities = new ArrayList<>();
+
+        cities.add("Mumbai");
+        cities.add("Chennai");
+        cities.add("Bengaluru");
+        cities.add("Kolkata");
+        cities.add("New Delhi");
+
+        System.out.println("Cities : " + cities);
+        cities.set(1,"Lucknow");
+        cities.remove(3);
+        System.out.println("List of cities after replacing 2nd and removing 4th element : " + cities);
+    }
+}
+
+
+
+
+3.Check if "Pune" exists → print "Found"/"Not Found" --
+
+import java.util.ArrayList;
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        ArrayList<String> cities = new ArrayList<>();
+
+        cities.add("Mumbai");
+        cities.add("Chennai");
+        cities.add("Bengaluru");
+        cities.add("Kolkata");
+        cities.add("New Delhi");
+
+        if (cities.contains("Pune")){
+            System.out.println("Found");
+        }else {
+            System.out.println("Not Found");
+        }
+
+    }
+}
+
+
+
+4.Add integers, sort with Collections.sort(), print
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> num = new ArrayList<>();
+
+        num.add(12);
+        num.add(11);
+        num.add(3);
+        num.add(5);
+        num.add(23);
+        num.add(1);
+
+        System.out.println("Integer Before sorting : " + num);
+        Collections.sort(num);
+        System.out.println("Integer After sorting : " + num);
+
+    }
+}
+
+
+5.Convert ArrayList<String> → String[] array, print
+
+import java.util.ArrayList;
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        ArrayList<String> cities = new ArrayList<>();
+
+        cities.add("Mumbai");
+        cities.add("Chennai");
+        cities.add("Bengaluru");
+        cities.add("Kolkata");
+        cities.add("New Delhi");
+
+        String[] arr = new String[cities.size()];
+
+        System.out.println("Cities After converting from ArrayList<String> to String[] array : ");
+        for (int i = 0; i < cities.size(); i++) {
+            arr[i] = cities.get(i);
+            System.out.println(arr[i]);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+LINKED-LIST QUESTIONS --
+
+1.Add 1–5, print using Iterator
+
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        LinkedList<Integer> num = new LinkedList<>();
+
+        num.add(12);
+        num.add(11);
+        num.add(3);
+        num.add(5);
+        num.add(23);
+        num.add(1);
+
+        System.out.println("Integers : ");
+
+        Iterator<Integer> it = num.iterator();
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
+    }
+}
+
+
+
+
+2.Add element at start & end, print
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        LinkedList<Integer> num = new LinkedList<>();
+
+        num.add(12);
+        num.add(11);
+        num.add(3);
+        num.add(5);
+        num.add(23);
+        num.add(1);
+
+        System.out.println("Integers : ");
+        num.addFirst(133);
+        num.addLast(145);
+        Iterator<Integer> it = num.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+}
+
+3.Remove value 3; if absent → "Element not found"
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        LinkedList<Integer> num = new LinkedList<>();
+
+        num.add(12);
+        num.add(11);
+        num.add(3);
+        num.add(5);
+        num.add(23);
+        num.add(1);
+
+        boolean found = false;
+        Iterator<Integer> it = num.iterator();
+        while (it.hasNext()) {
+            if (it.next().equals(3)){
+                num.remove();
+                found = true;
+                break;
+            }
+        }
+        if (found){
+            System.out.println("Element Removed.");
+        }else {
+            System.out.println("Element Not Found");
+        }
+
+
+    }
+}
+
+
+
+4.Insert 100 at index 2, print
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        LinkedList<Integer> num = new LinkedList<>();
+
+        num.add(12);
+        num.add(11);
+        num.add(3);
+        num.add(5);
+        num.add(23);
+        num.add(1);
+
+        System.out.print("Before Insert : " + num);
+
+        num.add(2,100);
+
+        System.out.print("\nAfter Insert : "+  num);
+
+
+    }
+}
+
+
+
+5.Print in reverse using descendingIterator()
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        LinkedList<Integer> num = new LinkedList<>();
+
+        num.add(12);
+        num.add(11);
+        num.add(3);
+        num.add(5);
+        num.add(23);
+        num.add(1);
+
+        System.out.println("Integer Reverse : ");
+        Iterator<Integer> rev = num.descendingIterator();
+        while (rev.hasNext()){
+            System.out.println(rev.next());
+        }
+    }
+}
+
+
+STACK QUESTIONS --
+1.Push 3 ints, pop 1, print stack
+
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Stack<Integer> num = new Stack<>();
+        num.push(1);
+        num.push(23);
+        num.push(34);
+
+        System.out.println("Stack : " + num);
+        System.out.println("Pop Element : " + num.pop());
+    }
+}
+
+
+2.Push values, peek top, print --
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Stack<Integer> num = new Stack<>();
+        num.push(1);
+        num.push(2);
+        num.push(3);
+
+        System.out.println("Stack : " + num);
+        System.out.println("Peek top  Element : " + num.peek());
+    }
+}
+
+
+3.Pop until empty → print "Stack is empty" -
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Stack<Integer> num = new Stack<>();
+
+        System.out.println("Stack : " + num);
+        if (!num.isEmpty()){
+            System.out.println("Pop element :" + num.pop());
+        }else {
+            System.out.println("Stack is empty");
+        }
+    }
+}
+
+
+4.Push 5, search value using stack.search(), print pos --
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Stack<String> name = new Stack<>();
+
+        name.push("Mumbai");
+        name.push("New Delhi");
+        name.push("Chennai");
+        name.push("Lucknow");
+        name.push("Patna");
+
+        System.out.println(name);
+
+        System.out.println("Position of element : " + name.search("Chennai"));
+    }
+}
+
+5.Copy stack to another without losing data (use temp stack)
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Stack<String> org = new Stack<>();
+
+        org.push("Mumbai");
+        org.push("Chennai");
+        org.push("New Delhi");
+        org.push("Lucknow");
+        org.push("Patna");
+
+       Stack<String> temp = new Stack<>();
+       Stack<String> copy = new Stack<>();
+
+       while (!org.isEmpty()) {
+           temp.push(org.pop());
+       }
+       while (!temp.isEmpty()){
+           String value = temp.pop();
+           org.push(value);
+           copy.push(value);
+       }
+
+        System.out.println("Original Stack : " +org);
+        System.out.println("Copy Stack : " + copy);
+
+    }
+}
+
+
+
+
+
+
+QUEUE (LinkedList) QUESTIONS --
+
+1.Enqueue ints, print queue -
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.add(12);
+        queue.add(11);
+        queue.add(1);
+        queue.add(122);
+        queue.add(13);
+        queue.add(4);
+
+        System.out.println(queue);
+
+    }
+}
+
+
+
+2.poll(), peek(), print queue --
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.add(12);
+        queue.add(11);
+        queue.add(1);
+        queue.add(122);
+        queue.add(13);
+        queue.add(4);
+
+        System.out.println("Queue Elements before poll and peak :" + queue);
+        System.out.println("Poll means retrieve and remove head element : " + queue.poll());
+        System.out.println("Peek means only retrieve head element not remove : " +  queue.peek());
+        System.out.println("Queue Elements after poll and peak : " + queue);
+
+    }
+}
+
+
+3.Print queue.size() & queue.isEmpty() --
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.add(12);
+        queue.add(11);
+        queue.add(1);
+        queue.add(122);
+        queue.add(13);
+        queue.add(4);
+
+        System.out.println("Size of queue : " + queue.size());
+        System.out.println("Queue is empty or not : " + queue.isEmpty());
+    }
+}
+
+
+
+4. Convert queue into ArrayList and print --
+
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Queue<Integer> queue = new LinkedList<Integer>();
+
+        queue.add(12);
+        queue.add(11);
+        queue.add(1);
+        queue.add(122);
+        queue.add(13);
+        queue.add(4);
+
+        ArrayList<Integer>  arr = new ArrayList<>(queue);
+
+        System.out.println("Queue : " + queue);
+        System.out.println("ArrayList : "  + arr);
+    }
+}
+
+
+5.Task queue: enqueue 5 strings, poll each → print "Processing: <task>" --
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+
+        Queue<String> queue = new LinkedList<String>();
+
+        queue.add("File");
+        queue.add("Send Email");
+        queue.add("Image");
+        queue.add("Uploading");
+        queue.add("Video");
+
+        while (!queue.isEmpty()){
+            String task = queue.poll();
+            System.out.println("Processing: " + task);
+        }
+
+        System.out.println("All task completed successfully.");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+HASHMAP QUESTIONS --
+
+.Add 5 (rollNo → name) pairs, print map
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashMap<Integer,String> el= new HashMap<>();
+
+        el.put(101,"Rahul");
+        el.put(102,"Anchal");
+        el.put(103,"Rohan");
+        el.put(104,"Kabir");
+        el.put(105,"Ram");
+
+        System.out.println(el);
+    }
+}
+
+
+
+2.Check key (e.g., 102) → print value or "Not found"
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashMap<Integer, String> el = new HashMap<>();
+
+        el.put(101, "Rahul");
+        el.put(102, "Anchal");
+        el.put(103, "Rohan");
+        el.put(104, "Kabir");
+        el.put(105, "Ram");
+
+        System.out.println(el);
+       if (el.containsKey(102)){
+           System.out.println(el.get(102));
+       }else {
+           System.out.println("Not found");
+       }
+    }
+}
+
+
+
+3.Remove key, print map -
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashMap<Integer, String> el = new HashMap<>();
+
+        el.put(101, "Rahul");
+        el.put(102, "Anchal");
+        el.put(103, "Rohan");
+        el.put(104, "Kabir");
+        el.put(105, "Ram");
+
+        if (el.containsKey(101)){
+            System.out.println("After remove key value : " +  el.remove(102));
+            System.out.println("Rest of the elements : " + el);
+        }else {
+            System.out.println("Not found");
+        }
+    }
+}
+
+
+
+4.replace(key, newVal), show before/after -
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashMap<Integer, String> el = new HashMap<>();
+
+        el.put(101, "Rahul");
+        el.put(102, "Anchal");
+        el.put(103, "Rohan");
+        el.put(104, "Kabir");
+        el.put(105, "Ram");
+
+        System.out.println("Set Before replace: " + el);
+        el.put(102,"Shiva");
+        System.out.println("Set after replace : " + el
+        );
+    }
+}
+
+
+
+5.Iterate using entrySet() and print key/value --
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashMap<Integer, String> el = new HashMap<>();
+
+        el.put(101, "Rahul");
+        el.put(102, "Anchal");
+        el.put(103, "Rohan");
+        el.put(104, "Kabir");
+        el.put(105, "Ram");
+
+
+        for(Map.Entry<Integer,String> entry : el.entrySet()){
+            System.out.println(entry.getKey() + "  " + entry.getValue());
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+ 
+HASHSET QUESTIONS--
+
+1.Add 5 ints, print set
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(14);
+        set.add(11);
+        set.add(3);
+        set.add(51);
+        set.add(23);
+        set.add(1);
+
+        System.out.println(set);
+
+    }
+}
+
+2.Add duplicate → print (observe)
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(14);
+        set.add(11);
+        set.add(312);
+        set.add(51);
+        set.add(11);
+        set.add(1);
+
+        System.out.println("HashSet auto remove duplicate element :"+set);
+    }
+}
+
+
+3.Check contains(value), print --
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(14);
+        set.add(11);
+        set.add(312);
+        set.add(51);
+        set.add(1);
+
+        System.out.print("Enter number : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (set.contains(n)){
+            System.out.println("Element "+n+" Existed." );
+        }else{
+            System.out.println("Element Not Existed.");
+        }
+    }
+}
+
+
+
+4.Remove value; if fail → "Element not present"
+
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(14);
+        set.add(11);
+        set.add(312);
+        set.add(51);
+        set.add(1);
+
+        System.out.print("Enter number : ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (set.contains(n)){
+            set.remove(n);
+            System.out.println("Element "+n+" removed successfully." );
+            System.out.println("Set of elements after removing : " +  set);
+        }else{
+            System.out.println("Element Not present.");
+        }
+    }
+}
+
+
+
+
+5.Convert to ArrayList, sort, print list --
+
+public class CollectionFQ {
+    public static void main(String[] args) {
+        HashSet<Integer> set = new HashSet<>();
+
+        set.add(14);
+        set.add(11);
+        set.add(312);
+        set.add(51);
+        set.add(1);
+
+        ArrayList<Integer> arr = new ArrayList<>(set);
+        Collections.sort(arr);
+        System.out.println(arr);
+    }
+}
+
+ */
+
+
+
+
+
+
+
