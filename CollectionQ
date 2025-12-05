@@ -5,6 +5,7 @@ ARRAYLIST QUESTIONS --
 1.Create ArrayList<String>, add 5 cities, print
 
 
+
 import java.util.ArrayList;
 
 public class CollectionFQ {
